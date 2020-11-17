@@ -30,8 +30,8 @@ class Caltech(VisionDataset):
           through the index
         - Labels should start from 0, so for Caltech you will have labels 0...100 (excluding the background class) 
         '''
-
-        file = open(f"{split}.txt", 'r')
+        file_root = "/".join(root.split('/')[:-1])
+        file = open(f"{file_root}/{split}.txt", 'r')
 
         for element in file.read().splitlines():
             if not element.startswith('BACKGROUND_Google'):
